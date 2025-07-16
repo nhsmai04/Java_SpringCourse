@@ -16,7 +16,7 @@ class Rectangle extends Shape{
         setHeight(y);
         setWidth(x);
     }
-    
+
     public double getArea()
     {
         return getHeight() * getWidth();
