@@ -35,7 +35,13 @@ class DemoUpperBound{
         return sum;
     }
 }
-
+class UnBounded{
+    public static void printList(List<?> list)
+    {
+        for(Object n : list)
+            System.out.println(n);
+    }
+}
 class DemoLowerBound{
     public static void addIntergers(List<? super Integer> list){
         list.add(1);
@@ -73,5 +79,13 @@ public class GenericDemo {
         DemoLowerBound.addIntergers(list5);
         List<Double> list6 = new ArrayList<>();
         //DemoLowerBound.addIntergers(list6); // Báo lỗi do double không phải là suppertype của Integer
+
+        //5 Demo Unbounded Wildcard
+        List<Integer> integers = Arrays.asList(1, 2, 3);
+        List<String> strings = Arrays.asList("a", "b", "c");
+
+        UnBounded.printList(integers); // In ra 1, 2, 3
+        UnBounded.printList(strings);
+
     }
 }
